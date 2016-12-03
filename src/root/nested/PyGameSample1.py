@@ -4,7 +4,7 @@ Created on Sep 10, 2016
 @author: kazsoft
 '''
 
-import pygame
+import pygame 
 import sys
 from pygame.locals import *
 

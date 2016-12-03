@@ -19,7 +19,7 @@ def main():
     def callback(event):
         frame.focus_set()
         print "clicked at", event.x, event.y
-        tkMessageBox.showinfo("Mouse Click", "You clicked the mouse at {0},{1}".format( event.x, event.y))
+        tkMessageBox.showinfo("Mouse Click", "You clicked the mouse at ({0},{1}), oh yes you did!".format( event.x, event.y))
     
     print Tk.TkVersion
     frame = Tk.Frame(root, width=200, height=200)
