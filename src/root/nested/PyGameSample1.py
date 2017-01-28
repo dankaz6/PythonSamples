@@ -9,6 +9,9 @@ import sys
 from pygame.locals import *
 
 def main():
+    
+    HOME_X = 20
+    HOME_Y = 20
 
     pygame.init()
     screen = pygame.display.set_mode((400,400)) 
@@ -17,13 +20,18 @@ def main():
     RED = (255,0,0)
     GREEN = (0,255,0)
     BLUE = (0,0,255)
+    PURPLE = (255,0,255)
+    CYAN = (0,255,255)
+    YELLOW = (255,255,0)
     
-    x = 20
-    y = 20
+    circle_color = RED
+    
+    x = HOME_X
+    y = HOME_Y
 
     font = pygame.font.SysFont("verdana", 20)
     label = font.render("Move the circle!", True, GREEN)
-    pygame.draw.circle(screen, RED, (x,y), 10)
+    pygame.draw.circle(screen, circle_color, (x,y), 10)
     screen.blit(label, (x,y+20))
     pygame.display.update()
     
@@ -43,9 +51,30 @@ def main():
                     y -= 10
                 elif (event.key == pygame.K_DOWN):
                     y += 10
+                elif (event.key == pygame.K_HOME):
+                    x = HOME_X
+                    y = HOME_Y
+                elif (event.key == pygame.K_PAGEDOWN):
+                    x += 10
+                    y += 10
+                elif (event.key == pygame.K_PAGEUP):
+                    x -= 10
+                    y -= 10
+                elif (event.key == pygame.K_b):
+                    circle_color = BLUE
+                elif (event.key == pygame.K_g):
+                    circle_color = GREEN
+                elif (event.key == pygame.K_r):
+                    circle_color = RED
+                elif (event.key == pygame.K_p):
+                    circle_color = PURPLE
+                elif (event.key == pygame.K_c):
+                    circle_color = CYAN
+                elif (event.key == pygame.K_m):
+                    circle_color = YELLOW
 
         screen.fill(BLACK)
-        pygame.draw.circle(screen, RED, (x,y), 10)
+        pygame.draw.circle(screen, circle_color, (x,y), 10)
         screen.blit(label, (x,y+20))
         pygame.display.update()
 
