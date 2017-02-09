@@ -1,8 +1,3 @@
-'''
-Created on Sep 16, 2016
-
-@author: kazsoft
-'''
 
 from Tkinter import *
 
